@@ -14,7 +14,7 @@ class Space extends Component {
     )
   }
   componentDidMount () {
-    window.fetch('https://api.open-notify.org/astros.json')
+    window.fetch('https://cors-anywhere.herokuapp.com/http://api.open-notify.org/astros.json')
       .then(meta => meta.json())
       .then(({people}) => {
         const nameList = people.map((person, idx) => <li key={idx}>{person.name}</li>)
